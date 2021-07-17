@@ -19,15 +19,13 @@ def addQuestions(questions, token):
 # Adds a student to course with corresponding courseCode
 # automatically adds all questions associated to that course to student
 # only called by lecturer.py
-def joinCourse(courseCode, password, email):
-    for user in data.users:
-        if user.email == email:
-            student = user
+def joinCourse(courseCode, password, token):
+    user = checkToken(token)
 
     for course in data.courses:
         if courseCode == course.courseCode and course.password == password:
             for question in course.questions:
-                student.questionList.add(question)
+                user.questionList.add(question)
 
 # Removes student from course
 # removes all associated questions from that student

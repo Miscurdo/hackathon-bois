@@ -12,6 +12,8 @@ def addQuestion(Question, courseCode):
         if courseCode == course.courseCode:
             course.questions.add(Question)
 
+
+# DOES NOTHING - POTENTIALLY REUSE
 # Adds a student to an available course
 def enrollStudent(email, courseCode):
     for course in data.courses:
