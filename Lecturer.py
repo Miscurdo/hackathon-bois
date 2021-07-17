@@ -4,7 +4,7 @@ import Student
 # Set up a new course - initialise with
 # password
 def addCourse(courseCode, password):
-    data.courses.add(courseCode, password)
+    data.courses.append({"class": courseCode, "coursePin": password, "questionList": []})
 
 #
 def addQuestion(Question, courseCode):
