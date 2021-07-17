@@ -78,7 +78,10 @@ function Dashboard () {
 		setOpen(false);
 	};
 	
-
+	const handleMoveToGroupHome = async e => {
+		e.preventDefault();
+		history.push('/group-home');
+	}
 	return (
 		<div>
 			<div>
@@ -94,23 +97,23 @@ function Dashboard () {
 				<Grid container spacing={3}>
 					<Grid item xs={12}></Grid>
 					<Grid item xs={12}>
-						<Paper className={classes.paper}>
+						<Paper className={classes.paper} onClick={handleMoveToGroupHome}>
 							<Typography>COMP123</Typography>
 						</Paper>
 					</Grid>
 					<Grid item xs={12}>
 						<Paper className={classes.paper}>
-							<Typography>COMP123</Typography>
+							<Typography>COMP123 Study Group</Typography>
 						</Paper>
 					</Grid>
 					<Grid item xs={12}>
 						<Paper className={classes.paper}>
-							<Typography>COMP123</Typography>
+							<Typography>My Other Study Group</Typography>
 						</Paper>
 					</Grid>
 					<Grid item xs={12}>
 						<Paper className={classes.paper}>
-							<Typography>COMP123</Typography>
+							<Typography>COMP456</Typography>
 						</Paper>
 					</Grid>
 				</Grid>

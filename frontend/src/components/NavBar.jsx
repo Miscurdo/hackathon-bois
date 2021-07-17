@@ -30,6 +30,16 @@ function NavBar () {
   const history = useHistory();
   const classes = useStyles();
 
+  const handleLogout = async e => {
+    e.preventDefault();
+    history.push('/');
+  }
+
+  const handleDashboard = async e => {
+    e.preventDefault();
+    history.push('/dashboard');
+  }
+
   return (
     <div className={classes.root}>
       <CssBaseline />
@@ -38,10 +48,12 @@ function NavBar () {
           <Typography id="BigBrain" variant="h6" color="inherit" noWrap>
             Requizit
           </Typography>
-          <Button id="dashboard" className={classes.button} color='inherit'>
+          <Button id="dashboard" className={classes.button} color='inherit' onClick={handleDashboard}>
             Dashboard
           </Button>
-          <Button id="logout" className={classes.logoutButton} color="inherit">Logout</Button>
+          {/* <Button id="logout" className={classes.logoutButton} color="inherit" onClick={history.push('/login')}>Logout</Button> */}
+          <Button id="logout" className={classes.logoutButton} color="inherit" onClick={handleLogout}>Logout</Button>
+
         </Toolbar>
       </AppBar>
     </div>

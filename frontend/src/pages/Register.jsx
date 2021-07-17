@@ -109,6 +109,10 @@ const RegisterPage = () => {
               fullWidth
               variant="contained"
               className={classes.submit}
+              onClick={(e) => {
+                e.preventDefault();
+                history.push('/dashboard');
+              }}
             >
               Sign Up
             </Button>

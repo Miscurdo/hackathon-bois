@@ -104,7 +104,7 @@ export const login = async (token, email, password) => {
 }
 
 // Logout (POST /logout)
-export const login = async (token) => {
+export const logout = async (token) => {
     const response = await fetch(`${BASEURL}/logout`, {
       method: 'POST',
       body: JSON.stringify({

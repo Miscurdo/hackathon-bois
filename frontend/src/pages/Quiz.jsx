@@ -27,7 +27,7 @@ function Quiz () {
 	const clickedNext = () => {
     setQuestionNum(questionNum + 1);
 		console.log(questionNum);
-		if (questionNum == 1) {
+		if (questionNum === 1) {
 			setQuestion('What comes after Venus?');
 			setAns1('Earth');
 			setAns2('Mercury');
@@ -35,7 +35,7 @@ function Quiz () {
 			setAns4('Mars');
 			setTag1('ASTRO1');
 			setTag2('Planets');
-		} else if (questionNum == 2) {
+		} else if (questionNum === 2) {
 			setQuestion('What course is that?');
 			setAns1('COMP2511');
 			setAns2('Maths');

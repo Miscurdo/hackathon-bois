@@ -6,6 +6,7 @@ import LockOutlinedIcon from '@material-ui/icons/LockOutlined';
 import { makeStyles } from '@material-ui/core/styles';
 
 import stockPhoto from '../studyingPhoto.jpg';
+const BASEURL = 'http://localhost:8080';
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -47,9 +48,12 @@ const useStyles = makeStyles((theme) => ({
   }
 }));
 
+
 const LoginPage = () => {
   const classes = useStyles();
   const history = useHistory();
+  const [email, setEmail] = React.useState('');
+  const [password, setPassword] = React.useState('');
 
   const handleRegisterRedirect = (e) => {
     history.push(`./register`);
@@ -58,6 +62,31 @@ const LoginPage = () => {
   const handleForgotPw = (e) => {
     history.push(`./forgot-password`);
   };
+
+  const handleSubmit = async e => {
+    e.preventDefault();
+    history.push('/dashboard');
+  
+    // const response = await fetch(`${BASEURL}/login`, {
+    //   body: JSON.stringify({
+    //     email,
+    //     password
+    //   }),
+    //   method: 'POST'
+    // })
+  
+    // const data = await response.json();
+  
+    // if (response.status === 200) {
+    //   console.log('nice');
+    //   console.log(`Token is ${JSON.stringify(data.token)}`);
+    //   localStorage.setItem('token', data.token);
+    //   localStorage.setItem('userEmail', email);
+    //   history.push('/dashboard');
+    // } else {
+    //   console.log('rip');
+    // }
+  }  
 
   return (
     <Grid container component="main" className={classes.root}>
@@ -104,6 +133,7 @@ const LoginPage = () => {
               variant="contained"
               color="primary"
               className={classes.submit}
+              onClick={handleSubmit}
             >
               Sign In
             </Button>
