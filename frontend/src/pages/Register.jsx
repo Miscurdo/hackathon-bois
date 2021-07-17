@@ -1,6 +1,6 @@
 import React from 'react';
 import { useHistory } from 'react-router-dom';
-import { Avatar, Button, CssBaseline, TextField, FormControlLabel, Checkbox } from '@material-ui/core';
+import { Avatar, Button, CssBaseline, TextField } from '@material-ui/core';
 import { Link, Paper, Grid, Typography } from '@material-ui/core';
 import LockOutlinedIcon from '@material-ui/icons/LockOutlined';
 import { makeStyles } from '@material-ui/core/styles';
@@ -20,10 +20,11 @@ const useStyles = makeStyles((theme) => ({
     backgroundPosition: 'center',
   },
   paper: {
-    marginTop: '20%',
+    margin: '20% auto 0 auto',
     display: 'flex',
     flexDirection: 'column',
     alignItems: 'center',
+    width: '80%'
   },
   avatar: {
     margin: theme.spacing(1),
@@ -31,93 +32,90 @@ const useStyles = makeStyles((theme) => ({
   },
   form: {
     width: '60%',
-    marginTop: theme.spacing(1),
+    marginTop: '60px',
   },
   submit: {
-    width: '30%',
-    margin: '10px auto',
+    width: '60%',
+    display: 'block',
+    margin: '20px auto',
+    color: 'white',
     backgroundColor: "#731DD8",
     '&:hover': {
       backgroundColor: '#C8B8D8',
       color: 'black',
     }
   },
-  secondaryDiv: {
-    marginTop: '30px'
+  textInput: {
+    marginTop: '10px',
   }
 }));
 
-const LoginPage = () => {
+const RegisterPage = () => {
   const classes = useStyles();
   const history = useHistory();
 
-  const handleRegisterRedirect = (e) => {
-    history.push(`./register`);
+  const handleLoginRedirect = (e) => {
+    history.push(`./login`);
   };
-  
-  const handleForgotPw = (e) => {
-    history.push(`./forgot-password`);
-  };
-
   return (
     <Grid container component="main" className={classes.root}>
       <CssBaseline />
       <Grid item xs={false} sm={4} md={7} className={classes.image} />
-      <Grid item xs={12} sm={8} md={5} component={Paper} elevation={6} square>
+      <Grid item xs={12} sm={8} md={5} component={Paper} elevation={10} square>
         <div className={classes.paper}>
           <Avatar className={classes.avatar}>
             <LockOutlinedIcon />
           </Avatar>
           <Typography component="h1" variant="h5">
-            Sign in
+            Sign Up
           </Typography>
           <form className={classes.form} noValidate>
-            <TextField
+            <TextField  className={classes.textInput}
               variant="outlined"
               margin="normal"
               required
               fullWidth
-              id="email"
-              label="Email Address"
-              name="email"
-              autoComplete="email"
+              id="name"
+              label="Name"
+              name="name"
+              autoComplete="name"
               autoFocus
             />
             <TextField
+              className={classes.textInput}
+              variant="outlined" required fullWidth id="email" label="Email Address" name="email" autoComplete="email"
+            />
+            <TextField
+              className={classes.textInput}
               variant="outlined"
-              margin="normal"
+              required
+              fullWidth
+              id="phone"
+              label="Phone Number"
+              name="phone"
+            />
+            <TextField
+              className={classes.textInput}
+              variant="outlined"
               required
               fullWidth
               name="password"
               label="Password"
               type="password"
               id="password"
-              autoComplete="current-password"
-            />
-            <FormControlLabel
-              control={<Checkbox value="remember" color="primary" />}
-              label="Remember me"
             />
             <Button
               type="submit"
               fullWidth
               variant="contained"
-              color="primary"
               className={classes.submit}
             >
-              Sign In
+              Sign Up
             </Button>
-            <Grid container className={classes.secondaryDiv}>
-              <Grid item xs>
-                <Link href="#" variant="body2" onClick={handleForgotPw}>
-                  Forgot password?
-                </Link>
-              </Grid>
-              <Grid item>
-                <Link href="#" variant="body2" onClick={handleRegisterRedirect}>
-                  {"Don't have an account? Sign Up"}
-                </Link>
-              </Grid>
+            <Grid item>
+              <Link href="#" variant="body2" onClick={handleLoginRedirect}>
+                Already have an account? Sign in
+              </Link>
             </Grid>
           </form>
         </div>
@@ -126,4 +124,4 @@ const LoginPage = () => {
   );
 };
 
-export default LoginPage;
+export default RegisterPage;

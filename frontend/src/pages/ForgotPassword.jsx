@@ -1,7 +1,7 @@
 import React from 'react';
 import { useHistory } from 'react-router-dom';
 import { Avatar, Button, CssBaseline, TextField, FormControlLabel, Checkbox } from '@material-ui/core';
-import { Link, Paper, Grid, Typography } from '@material-ui/core';
+import { Paper, Grid, Typography } from '@material-ui/core';
 import LockOutlinedIcon from '@material-ui/icons/LockOutlined';
 import { makeStyles } from '@material-ui/core/styles';
 
@@ -35,7 +35,9 @@ const useStyles = makeStyles((theme) => ({
   },
   submit: {
     width: '30%',
+    display: 'block',
     margin: '10px auto',
+    color: 'white',
     backgroundColor: "#731DD8",
     '&:hover': {
       backgroundColor: '#C8B8D8',
@@ -47,18 +49,13 @@ const useStyles = makeStyles((theme) => ({
   }
 }));
 
-const LoginPage = () => {
+const ForgotPasswordPage = () => {
   const classes = useStyles();
   const history = useHistory();
 
-  const handleRegisterRedirect = (e) => {
-    history.push(`./register`);
+  const handleLoginRedirect = (e) => {
+    history.push(`./login`);
   };
-  
-  const handleForgotPw = (e) => {
-    history.push(`./forgot-password`);
-  };
-
   return (
     <Grid container component="main" className={classes.root}>
       <CssBaseline />
@@ -69,7 +66,7 @@ const LoginPage = () => {
             <LockOutlinedIcon />
           </Avatar>
           <Typography component="h1" variant="h5">
-            Sign in
+            Forgot Password
           </Typography>
           <form className={classes.form} noValidate>
             <TextField
@@ -83,42 +80,24 @@ const LoginPage = () => {
               autoComplete="email"
               autoFocus
             />
-            <TextField
-              variant="outlined"
-              margin="normal"
-              required
+            <Button
+              type="submit"
               fullWidth
-              name="password"
-              label="Password"
-              type="password"
-              id="password"
-              autoComplete="current-password"
-            />
-            <FormControlLabel
-              control={<Checkbox value="remember" color="primary" />}
-              label="Remember me"
-            />
+              variant="contained"
+              className={classes.submit}
+            >
+              Reset
+            </Button>
             <Button
               type="submit"
               fullWidth
               variant="contained"
               color="primary"
               className={classes.submit}
+              onClick={handleLoginRedirect}
             >
               Sign In
             </Button>
-            <Grid container className={classes.secondaryDiv}>
-              <Grid item xs>
-                <Link href="#" variant="body2" onClick={handleForgotPw}>
-                  Forgot password?
-                </Link>
-              </Grid>
-              <Grid item>
-                <Link href="#" variant="body2" onClick={handleRegisterRedirect}>
-                  {"Don't have an account? Sign Up"}
-                </Link>
-              </Grid>
-            </Grid>
           </form>
         </div>
       </Grid>
@@ -126,4 +105,4 @@ const LoginPage = () => {
   );
 };
 
-export default LoginPage;
+export default ForgotPasswordPage;
