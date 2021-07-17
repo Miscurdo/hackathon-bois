@@ -50,7 +50,7 @@ def login(email, password):
 ###
 def logout(token):
     userID = authenticate(token)
-    if userID == null:
+    if userID == None:
         return
     
     user = data.users[userID]
@@ -75,7 +75,7 @@ def authenticate(token):
     # Finds which index user with the token inputted is at
     i = 0
     for user in data.users:
-        if user['token'].contains(token):
+        if user['token'].count(token) > 0:
             return i
         i += 1
     
