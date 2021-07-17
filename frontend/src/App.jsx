@@ -7,6 +7,8 @@ import LoginPage from './pages/Login';
 import RegisterPage from './pages/Register';
 import TitlePage from './pages/Title';
 import ForgotPasswordPage from './pages/ForgotPassword';
+import Dashboard from './pages/Dashboard';
+import GroupHomePage from './pages/GroupHome';
 
 const history = createBrowserHistory();
 function App() {
@@ -25,6 +27,12 @@ function App() {
           </Route>
           <Route exact path="/forgot-password">
             <ForgotPasswordPage />
+          </Route>
+          <Route exact path="/dashboard">
+            <Dashboard />
+          </Route>
+          <Route exact path="/group-home">
+            <GroupHomePage />
           </Route>
         </Switch>
       </Router>
