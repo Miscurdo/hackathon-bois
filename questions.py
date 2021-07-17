@@ -1,10 +1,11 @@
 import data
 import auth
 
-from random import randrange
+from random import uniform
 
+#TODO: Choices dont seem to be very random. Maybe have some sort of new seed.
 def chooseQestion(token, course):
-    courseElem = getCourse(course)
+    courseElem = getCourse(token, course)
     # Handling case where student is not enrolled in the course. Also should not happen.
     if courseElem == None:
         return None
@@ -18,7 +19,7 @@ def chooseQestion(token, course):
     if totalWeight == 0:
         return None
 
-    choice = randrange(totalWeight)
+    choice = uniform(0, totalWeight)
 
     # Should make each questions likelyhood of appearing equal to their weight
     totalWeight = 0
@@ -32,9 +33,9 @@ def chooseQestion(token, course):
 
 def questionCorrect(token, course, qID, answer):
     if answer == True:
-        modification = -0.1
+        modification = -0.2
     else:
-        modification = 0.1
+        modification = 0.2
 
     # Find Question and change its weight.
     tags = []
@@ -51,7 +52,7 @@ def questionCorrect(token, course, qID, answer):
     for question in courseElem['questionList']:
         change = False
         for tag in tags:
-            if question['tages'].count(tag) != 0:
+            if question['tags'].count(tag) != 0:
                 change = True
         
         if change == True:

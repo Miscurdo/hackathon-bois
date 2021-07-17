@@ -4,6 +4,10 @@ import Lecturer
 import Student
 import questions
 
+def printUserQs(token):
+    user = auth.authenticate(token)
+    print(data.users[user]['courseList'])
+
 def questionGen():
     Lecturer.addQuestion({"qID": 3, "question": "Who is on first?", "ansList": ["who?","what?","when"], "correctAns": "who", "tags": ["Hackathon", "monty Python"]}, "Hackathon")
     Lecturer.addQuestion({"qID": 4, "question": "Whats the answer to life the universe and everything?", "ansList": ["41","0","idk"], "correctAns": "42", "tags": ["Hitchhiker's Guidew", "Joke"]}, "Hackathon")
@@ -40,11 +44,11 @@ if __name__ == "__main__":
     #print(data.courses)
     
     Student.joinCourse("Hackathon", "", token)
-<<<<<<< HEAD
-    print(data.users)
-    print(questions.chooseQestion(token, "Hackathon"))
-=======
-    print(question.chooseQuestion(token, "Hackathon"))
->>>>>>> 48f4e4361df95d3e38559901d6e125184ba300af
+    #print(data.users)
+    #print(questions.chooseQestion(token, "Hackathon"))
+
+    questions.questionCorrect(token, "Hackathon", 2, False)
+    questions.questionCorrect(token, "Hackathon", 3, True)
+    printUserQs(token)
 
     #print(data.courses)
