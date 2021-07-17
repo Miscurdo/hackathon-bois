@@ -1,0 +1,323 @@
+[33mcommit b6f5eb11da1163fdbc68aab33d0d2023b04f1ed5[m[33m ([m[1;36mHEAD -> [m[1;32mextraBranch[m[33m)[m
+Merge: 5c7465f 97d26bc
+Author: Marco Seidenberg <marco.seidenberg@student.unsw.edu.au>
+Date:   Sat Jul 17 23:31:01 2021 +1000
+
+    Merge branch 'backend' of https://github.com/Miscurdo/hackathon-bois into extraBranch
+
+[33mcommit 5c7465f5642a9b399640939241b1d8ca5d76b20c[m[33m ([m[1;31morigin/main[m[33m, [m[1;31morigin/extraBranch[m[33m, [m[1;31morigin/HEAD[m[33m, [m[1;32mmaster[m[33m)[m
+Author: Marco Seidenberg <marco.seidenberg@student.unsw.edu.au>
+Date:   Sat Jul 17 23:21:19 2021 +1000
+
+    forgot to save
+
+[33mcommit 0e6f6fa25f2e59ab3587ac1264561413e41b978a[m
+Author: Marco Seidenberg <marco.seidenberg@student.unsw.edu.au>
+Date:   Sat Jul 17 23:20:15 2021 +1000
+
+    minor changes
+
+[33mcommit c95f0cf4e191f72bbabcf49181e34a6d959c26eb[m[33m ([m[1;31morigin/questions[m[33m, [m[1;32mquestions[m[33m)[m
+Author: Jamie <john.conlon@student.unsw.edu.au>
+Date:   Sat Jul 17 23:10:25 2021 +1000
+
+    Initial questionCorrect and chooseQuestion
+
+[33mcommit 3387c12d2a69b6b523fd61f84ede18c513da232a[m
+Author: Jamie <john.conlon@student.unsw.edu.au>
+Date:   Sat Jul 17 22:57:43 2021 +1000
+
+    Initial chooseQuestion written. Needs debug
+
+[33mcommit 1f9b97f6a82e92d6bb8b6dd2f4c389ee22ace48a[m
+Author: Jamie <john.conlon@student.unsw.edu.au>
+Date:   Sat Jul 17 22:45:30 2021 +1000
+
+    Maybe fixed after i fucked it last
+
+[33mcommit 77785a24d8af79e3c587fd6fc7b1abba2ecdb363[m
+Merge: 5f3e780 2fd5b07
+Author: Jamie <john.conlon@student.unsw.edu.au>
+Date:   Sat Jul 17 22:42:08 2021 +1000
+
+    Merging master to check compatability
+
+[33mcommit 5f3e7800e16a6fc075b15e0e600c4fcdad88d879[m
+Author: Jamie <john.conlon@student.unsw.edu.au>
+Date:   Sat Jul 17 22:36:13 2021 +1000
+
+    Fixed big issue in users.json example layout
+
+[33mcommit 2fd5b079a4acb7035a368910919b4929c9b82a99[m[33m ([m[1;31morigin/master[m[33m)[m
+Author: Marco Seidenberg <marco.seidenberg@student.unsw.edu.au>
+Date:   Sat Jul 17 22:30:19 2021 +1000
+
+    finished basically unless new changes needed to be added
+
+[33mcommit 0303e5adcfd23ca70487b606f66854440b5c731b[m
+Author: Marco Seidenberg <marco.seidenberg@student.unsw.edu.au>
+Date:   Sat Jul 17 22:23:32 2021 +1000
+
+    Student and Lecturer now working
+
+[33mcommit af35fe1e67f82c3e28797d83c9e226a19141e256[m
+Merge: 3d6f21c f59bfa9
+Author: Marco Seidenberg <marco.seidenberg@student.unsw.edu.au>
+Date:   Sat Jul 17 21:57:16 2021 +1000
+
+    Merge branch 'questions' of https://github.com/Miscurdo/hackathon-bois into extraBranch
+
+[33mcommit 3d6f21c051e0dca04e9fea7039f87cd0817ff2be[m
+Author: Marco Seidenberg <marco.seidenberg@student.unsw.edu.au>
+Date:   Sat Jul 17 21:56:35 2021 +1000
+
+    test start
+
+[33mcommit f59bfa9139f38590e8805a5684296ca15921dbe1[m
+Author: Jamie <john.conlon@student.unsw.edu.au>
+Date:   Sat Jul 17 21:55:13 2021 +1000
+
+    added tages to the class template
+
+[33mcommit a26fa96065a9248bd5c832f9a9e69cf04cd48f08[m
+Merge: a5e9a4c 6e26d15
+Author: Marco Seidenberg <marco.seidenberg@student.unsw.edu.au>
+Date:   Sat Jul 17 21:44:36 2021 +1000
+
+    Merge branch 'master' into extraBranch
+
+[33mcommit 6e26d15aaa7e588536245c3c6c0cccfaceb50fb4[m
+Merge: c3627d5 e38c5c8
+Author: Marco Seidenberg <marco.seidenberg@student.unsw.edu.au>
+Date:   Sat Jul 17 21:44:25 2021 +1000
+
+    Merge branch 'main' of https://github.com/Miscurdo/hackathon-bois
+
+[33mcommit a5e9a4c8a6cfbbefe8047708dca3ca7469c1a603[m
+Merge: ff42f38 c3627d5
+Author: Marco Seidenberg <marco.seidenberg@student.unsw.edu.au>
+Date:   Sat Jul 17 21:42:53 2021 +1000
+
+    f
+
+[33mcommit e38c5c88c210c286693a46d5632db35862a87cc9[m[33m ([m[1;32mmain[m[33m)[m
+Author: Jamie <john.conlon@student.unsw.edu.au>
+Date:   Sat Jul 17 21:40:12 2021 +1000
+
+    courses now have a pin
+
+[33mcommit ff42f3820147cd4017c692cc82357f2bed77e0b7[m
+Author: Marco Seidenberg <marco.seidenberg@student.unsw.edu.au>
+Date:   Sat Jul 17 21:40:10 2021 +1000
+
+    changes
+
+[33mcommit a20189428f5145f1e11f720525473d281ccc6af6[m[33m ([m[1;31morigin/authBranch[m[33m)[m
+Author: Jamie <john.conlon@student.unsw.edu.au>
+Date:   Sat Jul 17 21:36:50 2021 +1000
+
+    auth.py tested and working
+
+[33mcommit 2731861504cad7e947abb2e28f3a549ccdc8279a[m
+Author: Jamie <john.conlon@student.unsw.edu.au>
+Date:   Sat Jul 17 21:33:07 2021 +1000
+
+    Fix for token bug
+
+[33mcommit ef859f2780fca3bbc5611dbf7dcf82a9d32b43ad[m
+Author: Jamie <john.conlon@student.unsw.edu.au>
+Date:   Sat Jul 17 21:29:06 2021 +1000
+
+    Fixed to work with new function calls
+
+[33mcommit e628aa3d046ffc18409965e462e80c0a59827f28[m
+Author: Jamie <john.conlon@student.unsw.edu.au>
+Date:   Sat Jul 17 21:28:41 2021 +1000
+
+    Updated user datastructure
+
+[33mcommit 24e84459f175b9bfe66f910b4c6dc416a4d27bae[m
+Author: Marco Seidenberg <marco.seidenberg@student.unsw.edu.au>
+Date:   Sat Jul 17 21:11:14 2021 +1000
+
+    changes to student & lecturer
+
+[33mcommit 199b3546fea627fd7096aeab9d5c50a520062ad5[m
+Author: Marco Seidenberg <marco.seidenberg@student.unsw.edu.au>
+Date:   Sat Jul 17 21:07:40 2021 +1000
+
+    added readme/test back
+
+[33mcommit 0c69985fddc6ff47f3aaa7d28e3c88462a5e6981[m
+Merge: 2920dc3 1ca933c
+Author: Marco Seidenberg <marco.seidenberg@student.unsw.edu.au>
+Date:   Sat Jul 17 21:04:58 2021 +1000
+
+    Merge branch 'authBranch' into extraBranch
+
+[33mcommit 2920dc3a8810273ea9764fc8fb603d75848b2243[m
+Author: Marco Seidenberg <54054381+Miscurdo@users.noreply.github.com>
+Date:   Sat Jul 17 20:51:24 2021 +1000
+
+    Delete README.md
+
+[33mcommit b134427716592cd299945b9d08ec86573bf767a7[m
+Author: Marco Seidenberg <54054381+Miscurdo@users.noreply.github.com>
+Date:   Sat Jul 17 20:51:18 2021 +1000
+
+    Delete test.py
+
+[33mcommit 1ca933c5ac06efd0e6245b3cc248e015a6e19915[m[33m ([m[1;32mauthBranch[m[33m)[m
+Author: Jamie <john.conlon@student.unsw.edu.au>
+Date:   Sat Jul 17 20:42:54 2021 +1000
+
+    An example course json with 1 question.
+
+[33mcommit 01fc9453b3d910b1f197cfacacbafb886f647751[m
+Merge: ef52b70 6aacda4
+Author: Marco Seidenberg <marco.seidenberg@student.unsw.edu.au>
+Date:   Sat Jul 17 20:34:52 2021 +1000
+
+    Merge branch 'authBranch' into extraBranch
+
+[33mcommit ef52b70cc491b8ceadcaa347c17d0231e6f520d7[m
+Author: Marco Seidenberg <marco.seidenberg@student.unsw.edu.au>
+Date:   Sat Jul 17 20:32:05 2021 +1000
+
+    changes to student/lecturer
+
+[33mcommit 6aacda4a4721e68b30d0076c171a7a27a7c54c1d[m
+Author: Jamie <john.conlon@student.unsw.edu.au>
+Date:   Sat Jul 17 20:31:06 2021 +1000
+
+     Working data.py init and some fixes to auth.py
+
+[33mcommit 793e1fa279d1d228aa97138fddcb1ab5a0d85273[m
+Author: Marco Seidenberg <marco.seidenberg@student.unsw.edu.au>
+Date:   Sat Jul 17 20:19:59 2021 +1000
+
+    changes to Student/Lecturer
+
+[33mcommit c3627d52c9d921fb2e0e3f46926e7c1177374a60[m
+Author: Marco Seidenberg <marco.seidenberg@student.unsw.edu.au>
+Date:   Sat Jul 17 19:57:16 2021 +1000
+
+    Changes to lecturer/student
+
+[33mcommit 97d26bcf967e15446d6ac04e9bc0ba74b836c984[m[33m ([m[1;31morigin/backend[m[33m)[m
+Author: annie <z5209781@unsw.edu.au>
+Date:   Sat Jul 17 19:36:04 2021 +1000
+
+    added basic functions and routes to server
+
+[33mcommit a09966c45f520a9723e6cd6cc66a4fd4c2f32527[m
+Author: Jamie <john.conlon@student.unsw.edu.au>
+Date:   Sat Jul 17 19:22:31 2021 +1000
+
+    initial authentification functions complete
+
+[33mcommit e2e63329e64750ed43a402506f478a5de370393b[m
+Author: Jamie <john.conlon@student.unsw.edu.au>
+Date:   Sat Jul 17 19:06:29 2021 +1000
+
+    Some test data
+
+[33mcommit dbc32b7248156a0c29c4d815fc172fca677ca540[m
+Author: Jamie <john.conlon@student.unsw.edu.au>
+Date:   Sat Jul 17 19:04:16 2021 +1000
+
+    data.py can now load from a file
+
+[33mcommit 87e6ce212fb1ff73a48632dc60ecbf4139b58b09[m
+Merge: 25e1f97 0cf133f
+Author: Marco Seidenberg <marco.seidenberg@student.unsw.edu.au>
+Date:   Sat Jul 17 18:59:29 2021 +1000
+
+    Merge branch 'main' of https://github.com/Miscurdo/hackathon-bois
+
+[33mcommit 25e1f97689f2ca700d1f6bc7dec3e05283686b43[m
+Author: Marco Seidenberg <marco.seidenberg@student.unsw.edu.au>
+Date:   Sat Jul 17 18:54:50 2021 +1000
+
+    add student/lecturer draft
+
+[33mcommit 0cf133f69986b875cdb72b2c083b6dbd5ecc382d[m
+Merge: b178c56 31ab822
+Author: Jamie <john.conlon@student.unsw.edu.au>
+Date:   Sat Jul 17 18:53:07 2021 +1000
+
+    Merge branch 'main' of https://github.com/Miscurdo/hackathon-bois
+
+[33mcommit b178c56259f219d6ae56c45a0bb81ec476dc4a8c[m
+Author: Jamie <john.conlon@student.unsw.edu.au>
+Date:   Sat Jul 17 18:52:46 2021 +1000
+
+    created data.py to store all active users and questions in memory
+
+[33mcommit 31ab8225c0976596dedc0f2a4fdb7a9037145123[m
+Author: annie <z5209781@unsw.edu.au>
+Date:   Sat Jul 17 17:21:04 2021 +1000
+
+    added backend and frontend folders
+
+[33mcommit eb1aa1e18c1cdafbfa4f0a4c3f65561a8a1d4f85[m
+Merge: 4180339 553770a
+Author: Jamie <john.conlon@student.unsw.edu.au>
+Date:   Sat Jul 17 17:12:43 2021 +1000
+
+    Merge branch 'main' of https://github.com/Miscurdo/hackathon-bois
+
+[33mcommit 553770a4d8cee9241c5ff5c59af894c6ee231b78[m
+Merge: e3e59d9 43cf2c2
+Author: Marco Seidenberg <marco.seidenberg@student.unsw.edu.au>
+Date:   Sat Jul 17 17:11:17 2021 +1000
+
+    Merge branch 'main' of https://github.com/Miscurdo/hackathon-bois into main
+
+[33mcommit e3e59d9192a859bbb59986a0cc6c469c6608a8fd[m
+Author: Marco Seidenberg <marco.seidenberg@student.unsw.edu.au>
+Date:   Sat Jul 17 17:10:41 2021 +1000
+
+    added student/lecturer
+
+[33mcommit 418033911c77993daab995b53c22793cb78eeb45[m
+Author: Jamie <john.conlon@student.unsw.edu.au>
+Date:   Sat Jul 17 16:53:37 2021 +1000
+
+    Documentation finished
+
+[33mcommit 43cf2c2e24af26f218245c30d4b8eabc77676ccc[m
+Author: Jamie <john.conlon@student.unsw.edu.au>
+Date:   Sat Jul 17 16:46:17 2021 +1000
+
+    Initial documentation
+
+[33mcommit cb8575bb640e11e73800f195eaad91e36594ed88[m
+Author: Jamie <john.conlon@student.unsw.edu.au>
+Date:   Sat Jul 17 14:48:29 2021 +1000
+
+    Initial outline for authentification functions
+
+[33mcommit 84552ceb4924834dcbcbaa2b194212d5a33f1014[m
+Author: Jamie <john.conlon@student.unsw.edu.au>
+Date:   Sat Jul 17 14:43:38 2021 +1000
+
+    Holds all user login and registration functions
+
+[33mcommit 58b14a7b481841379bb8d0ca765842197b41920e[m
+Author: Jamie <john.conlon@student.unsw.edu.au>
+Date:   Sat Jul 17 14:40:49 2021 +1000
+
+    Test
+
+[33mcommit bf976470998163ed862478867f8b3c3a05fde0fb[m
+Author: Jamie <john.conlon@student.unsw.edu.au>
+Date:   Sat Jul 17 14:40:04 2021 +1000
+
+    README update
+
+[33mcommit 3812fc95787f43c9298197a8f178530bd6c6703b[m
+Author: Shabrina (z5205391) <57312914+syusri@users.noreply.github.com>
+Date:   Sat Jul 17 14:28:06 2021 +1000
+
+    Create README.md

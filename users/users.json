@@ -1,0 +1,1 @@
+[{"email": "test@gmail.com.au", "password": "test", "phone": "04111111111", "name": "Test Test", "token": [], "courseList": [{"courseCode": "COMP1511", "questionList": [{"qID": 1, "weight": 0.2, "tags":["COMP1511", "admin"]}]}], "ownedCourses": []}]
