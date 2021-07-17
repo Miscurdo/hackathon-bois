@@ -1,6 +1,8 @@
 import json
 import hashlib
 
+import data
+
 ###
 # input: JSON {'email': ,'password': ,'phone': ,'name': ,'student': boolean}
 # returns: null
@@ -11,9 +13,15 @@ import hashlib
 ###
 def register(JSONInput):
     newStudent = json.loads(JSONInput)
+    password = newStudent['password']
     newStudent['password'] = hashlib.sha256(newStudent['password'].encode()).hexdigest()
     newStudent['questionList'] = []
     newStudent['token'] = []
+
+    data.users.append(newStudent)
+
+    return login(json.dumps({'email': newStudent['email'], 'password': password}))
+
 ###
 # input: {'email':, 'password':}
 # result: {'token':}
@@ -21,19 +29,37 @@ def register(JSONInput):
 # If the user is already logged in, overwrite their token.
 ###
 def login(JSONInput):
-    pass
+    user = json.loads(JSONInput)
+    for elem in data.users:
+        if elem['email'] == user['email'] and elem['password'] == hashlib.sha256(newStudent['password'].encode()).hexdigest():
+            token = generateToken())
+            elem['token'].append(token)
+            return json.dumps({'token': token})
+        else if elem['email'] == user['email']:
+            # Passwords do not match
+            return
+    
+    return
 
 ###
 # input: {'token'}
 # Sets user's token to be null.
 ###
 def logout(JSONInput)
-    pass
+    tokenInput = json.loads(JSONInput)
+    userID = authenticate(tokenInput['token'])
+    if userID == null:
+        return
+    
+    user = data.users[userID]
+    user['token'].remove(token)
+    return
 
 ###
 # input: {'email':, 'phone':}
 # Takes either an email or phone number and texts a link to reset their password.
 # if only one is provided make the other null
+# TODO if time
 ###
 def passreset(JSONInput):
     pass
@@ -43,4 +69,14 @@ def passreset(JSONInput):
 # if user is not logged in returns null
 ###
 def authenticate(JSONInput):
-    pass
+    tokenInput = json.dumps(JSONInput)
+
+    # Finds which index user with the token inputted is at
+    i = 0
+    for user in data.users:
+        if user['token'].contains(tokenInput['token']):
+            return i
+        i += 1
+    
+    # no user with such token
+    return null

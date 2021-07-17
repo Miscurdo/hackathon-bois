@@ -5,16 +5,9 @@ import json
 # Then the list can be accessed by data.courses or data.users.
 ###
 def init():
-    f = open("classes/courses", "r")
-    userJSON = f.read()
-    f.close()
-
-    f = open("users/users", "r")
-    courseJSON = f.read()
-    f.close()
-
-    global users = json.loads(userJSON)
-    global courses = json.loads(courseJSON)
+    #json.load loads file directly into python datatype
+    global users = json.load(users/users)
+    global courses = json.load(classes/courses)
 
 # Saves all current values for users and classes to their respective JSON files.
 # To be completed later since we dont have to save at this point.
