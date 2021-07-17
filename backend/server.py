@@ -70,5 +70,6 @@ def chooseQuiz():
     token = request.form["token"]
 
 @APP.route('')
-if __name__ == "__main__":
-    APP.run(host='localhost', port=8080)
+def main():
+    if __name__ == "__main__":
+        APP.run(host='localhost', port=8080)

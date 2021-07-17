@@ -22,6 +22,8 @@ def joinCourse(courseCode, password, token):
             qList = []
            
             for question in course['questionList']:
+                #print(question)
+                #print(question['tags'])
                 qList.append({"qID": question['qID'], "weight": 1, "tags": question['tags']})
             
             newCourse = {"courseCode": courseCode, "questionList": qList}
