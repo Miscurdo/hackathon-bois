@@ -12,16 +12,19 @@ import data
 # Takes a users details and adds them to the list of users.
 # Password is hashed before being saved.
 ###
-def register(JSONInput):
-    newStudent = json.loads(JSONInput)
-    password = newStudent['password']
-    newStudent['password'] = hashlib.sha256(newStudent['password'].encode()).hexdigest()
-    newStudent['questionList'] = []
+def register(email, password, phone, name):
+    newStudent = {}
+    newStudent['email'] = email
+    newStudent['phone'] = phone
+    newStudent['name'] = name
+    newStudent['password'] = hashlib.sha256(password.encode()).hexdigest()
+    newStudent['courseList'] = []
     newStudent['token'] = []
+    newStudent['ownedCourses'] = []
 
     data.users.append(newStudent)
 
-    return login(json.dumps({'email': newStudent['email'], 'password': password}))
+    return login(email, password)
 
 ###
 # input: {'email':, 'password':}
@@ -29,15 +32,14 @@ def register(JSONInput):
 # Assigns a token to the user.
 # If the user is already logged in, overwrite their token.
 ###
-def login(JSONInput):
-    user = json.loads(JSONInput)
+def login(email, password):
     for elem in data.users:
-        if elem['email'] == user['email'] and elem['password'] == hashlib.sha256(newStudent['password'].encode()).hexdigest():
-            token = generateToken()
+        if elem['email'] == email and elem['password'] == hashlib.sha256(password.encode()).hexdigest():
+            token = str(generateToken())
             elem['token'].append(token)
-            return json.dumps({'token': token})
-        elif elem['email'] == user['email']:
-            # Passwords do not match
+            return token
+        elif elem['email'] == email:
+            # Passwords do not match and so we exit the loop
             return
     
     return
@@ -46,10 +48,9 @@ def login(JSONInput):
 # input: {'token'}
 # Sets user's token to be null.
 ###
-def logout(JSONInput):
-    tokenInput = json.loads(JSONInput)
-    userID = authenticate(tokenInput['token'])
-    if userID == null:
+def logout(token):
+    userID = authenticate(token)
+    if userID == None:
         return
     
     user = data.users[userID]
@@ -62,20 +63,19 @@ def logout(JSONInput):
 # if only one is provided make the other null
 # TODO if time
 ###
-def passreset(JSONInput):
+def passreset(email):
     pass
 ###
 # input: {'token'}
 # Takes a token and confirms it is valid. If a user is logged in with that token it returns the user id.
 # if user is not logged in returns null
 ###
-def authenticate(JSONInput):
-    tokenInput = json.dumps(JSONInput)
+def authenticate(token):
 
     # Finds which index user with the token inputted is at
     i = 0
     for user in data.users:
-        if user['token'].contains(tokenInput['token']):
+        if user['token'].count(token) > 0:
             return i
         i += 1
     
