@@ -1,5 +1,6 @@
 import json
 import hashlib
+from uuid import uuid4
 
 import data
 
@@ -32,10 +33,10 @@ def login(JSONInput):
     user = json.loads(JSONInput)
     for elem in data.users:
         if elem['email'] == user['email'] and elem['password'] == hashlib.sha256(newStudent['password'].encode()).hexdigest():
-            token = generateToken())
+            token = generateToken()
             elem['token'].append(token)
             return json.dumps({'token': token})
-        else if elem['email'] == user['email']:
+        elif elem['email'] == user['email']:
             # Passwords do not match
             return
     
@@ -45,7 +46,7 @@ def login(JSONInput):
 # input: {'token'}
 # Sets user's token to be null.
 ###
-def logout(JSONInput)
+def logout(JSONInput):
     tokenInput = json.loads(JSONInput)
     userID = authenticate(tokenInput['token'])
     if userID == null:
@@ -79,4 +80,7 @@ def authenticate(JSONInput):
         i += 1
     
     # no user with such token
-    return null
+    return None
+
+def generateToken():
+    return uuid4()
