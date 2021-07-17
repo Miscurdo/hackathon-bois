@@ -40,7 +40,11 @@ if __name__ == "__main__":
     #print(data.courses)
     
     Student.joinCourse("Hackathon", "", token)
+<<<<<<< HEAD
     print(data.users)
     print(questions.chooseQestion(token, "Hackathon"))
+=======
+    print(question.chooseQuestion(token, "Hackathon"))
+>>>>>>> 48f4e4361df95d3e38559901d6e125184ba300af
 
     #print(data.courses)
