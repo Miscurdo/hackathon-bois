@@ -64,12 +64,21 @@ def joinGroup():
 
     Student.joinCourse(courseCode, password, token)
 
-@APP.route('/quiz', methods=['GET', 'POST'])
+@APP.route('/quiz/getQ', methods=['GET'])
 def chooseQuiz():
     courseCode = request.form["courseCode"]
     token = request.form["token"]
 
     return json.dumps(questions.chooseQestion(token, courseCode))
+
+@APP.route('/quiz/updateQ', methods=['POST'])
+def updateQ():
+    qID = request.form["qID"]
+    token = request.form["token"]
+    course = request.form["course"]
+    answer = request.form["answer"]
+
+    questions.questionCorrect(token, course, qID, answer)
 
 @APP.route('')
 def main():
