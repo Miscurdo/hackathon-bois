@@ -22,7 +22,7 @@ def joinCourse(courseCode, password, token):
             dict = {"class": courseCode, "questionList": qList}
 
             for question in course['questionList']:
-                qList.append({"tags": [courseCode,"None"], "questionID": question["questionID"], "weight": 1})
+                qList.append({"tags": question['tags'], "questionID": question["questionID"], "weight": 1})
             
             user['courseList'].append(dict)
             return
