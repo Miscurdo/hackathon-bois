@@ -5,6 +5,7 @@ import { createBrowserHistory } from 'history';
 
 // import LoginPage from './pages/Login';
 import TitlePage from './pages/Title';
+import Dashboard from './pages/Dashboard';
 
 const history = createBrowserHistory();
 function App() {
@@ -14,6 +15,9 @@ function App() {
         <Switch>
           <Route exact path="/">
             <TitlePage />
+          </Route>
+          <Route exact path="/dashboard">
+            <Dashboard />
           </Route>
         </Switch>
       </Router>
