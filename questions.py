@@ -3,7 +3,7 @@ import auth
 
 from random import randrange
 
-def chooseQestion(token, course):
+def chooseQuestion(token, course):
     courseElem = getCourse(course)
     # Handling case where student is not enrolled in the course. Also should not happen.
     if courseElem == None:
