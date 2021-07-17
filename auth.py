@@ -1,4 +1,11 @@
-# Adds user to the list of users. Will also then log them in.
+###
+# input: JSON dict {'email': ,'password': ,'phone': ,'name': ,'student': boolean}
+# returns: null
+#
+# student is a boolean variable. False if user is a lecturer, True if student
+# Takes a users details and adds them to the list of users.
+# Password is hashed before being saved.
+###
 def register(email, password, phone):
     pass
 
