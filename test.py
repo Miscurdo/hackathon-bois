@@ -25,7 +25,7 @@ if __name__ == "__main__":
     #print(data.users)
     #print(data.courses)
     #print(auth.authenticate(token))
-    auth.logout(token)
+    
     #print(data.users)
 
     newQuestions = questionGen()
@@ -33,6 +33,6 @@ if __name__ == "__main__":
             Lecturer.addQuestion(question, "Hackathon")
     
     Student.joinCourse("Hackathon", "", token)
-    print(Student.chooseQestion(token, "Hackathon"))
-
+    print(Student.chooseQuestion(token, "Hackathon"))
+    auth.logout(token)
     #print(data.courses)
