@@ -17,24 +17,25 @@ def joinCourse(courseCode, password, token):
     user = checkToken(token)
 
     for course in data.courses:
-        if courseCode == course.courseCode and course['password'] == password:
+        if courseCode == course['class'] and course['coursePin'] == password:
             qList = []
-            dict = {"course": courseCode, "questionList": qList}
+            dict = {"class": courseCode, "questionList": qList}
 
-            for question in course.questions:
-                qList.add({"questionID": question["questionID"], "weight": 1})
+            for question in course['questionList']:
+                qList.append({"tags": [courseCode,"None"], "questionID": question["questionID"], "weight": 1})
             
-            user['courseList'].add(dict)
-            break
+            user['courseList'].append(dict)
+            return
 
     
 
 # Removes student from course
 # removes all associated questions from that student
 def removeCourse(courseCode, token):
-    user = checkToken
+    user = checkToken(token)
 
-    for question in user.questionList:
-        if question.courseCode == courseCode:
-            user.questionList.remove(courseCode)
+    for course in user['courseList']:
+        if course['class'] == courseCode:
+            user['courseList'].remove(course)
+            return
 

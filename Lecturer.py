@@ -9,9 +9,13 @@ def addCourse(courseCode, password):
 #
 def addQuestion(Question, courseCode):
     for course in data.courses:
-        if courseCode == course.courseCode:
-            course.questions.add(Question)
+        if courseCode == course['class']:
+            course['questionList'].append(Question)
 
+def removeQuestion(Question, courseCode):
+    for course in data.courses:
+        if courseCode == course['class']:
+            course['questionList'].remove(Question)
 
 # DOES NOTHING - POTENTIALLY REUSE
 # Adds a student to an available course

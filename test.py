@@ -9,8 +9,13 @@ if __name__ == "__main__":
     print("Token is: " + token)
     #print(data.users)
     Lecturer.addCourse("Hackathon", "")
-    Lecturer.
-    print(data.courses)
+    Lecturer.addQuestion({"tags":["Hackathon", "pogging"], "questionID": 2, "question": "How is it going?", "ansList": ["A","B","C"], "correctAns": "D"}, "Hackathon")
+    
+    Student.joinCourse("Hackathon", "", token)
+    print(data.users)
+    Student.removeCourse("Hackathon", token)
+    print(data.users)
+    #print(data.courses)
     #print(auth.authenticate(token))
     auth.logout(token)
     #print(data.users)
