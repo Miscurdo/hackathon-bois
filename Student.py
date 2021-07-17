@@ -10,6 +10,7 @@ def checkToken(token):
     return user
 
 
+
 # Adds a student to course with corresponding courseCode
 # automatically adds all questions associated to that course to student
 # initialising their weights as 1 to start

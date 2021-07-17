@@ -21,7 +21,7 @@ CORS(APP)
 # Auth
 @APP.route('/')
 def homepage():
-
+    pass
 
 @APP.route('/login', methods=['POST'])
 def login():
