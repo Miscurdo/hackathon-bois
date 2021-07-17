@@ -138,7 +138,7 @@ const GroupHomePage = () => {
         <div className={classes.main}>
           <Paper className={classes.quiz} elevation={8}>
             <Typography component="h4" variant="h4" className={classes.courseTitle}>
-              COMP1511
+              COMP123
             </Typography>
             <Button
               onClick={handleQuizRedirect}
