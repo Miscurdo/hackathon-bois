@@ -84,37 +84,31 @@ export const register = async (token, email, password, phone, name) => {
 }
 
 // Login (POST /login)
-export const login = async (token) => {
-    const response = await fetch(`${BASEURL}/logout`, {
+export const login = async (token, email, password) => {
+    const response = await fetch(`${BASEURL}/login`, {
       method: 'POST',
       body: JSON.stringify({
         token,
         email,
-        password,
-        phone,
-        name
+        password
       })
     })
   
     if (response.status === 200) {
       const data = await response.json();
-      console.log(`Logging out successful!`)
+      console.log(`Logging in successful!`)
       return data;
     } else {
-      console.log('Error occurred while logging out');
+      console.log('Error occurred while logging in');
     }
 }
 
-// Login (POST /login)
+// Logout (POST /logout)
 export const login = async (token) => {
     const response = await fetch(`${BASEURL}/logout`, {
       method: 'POST',
       body: JSON.stringify({
-        token,
-        email,
-        password,
-        phone,
-        name
+        token
       })
     })
   

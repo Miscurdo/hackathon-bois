@@ -43,6 +43,8 @@ function Quiz () {
 			setAns4('English');
 			setTag1('COMP1511');
 			setTag2('General');
+		} else {
+			history.push(`./results`);
 		}
 		setAnswered('#d6d7dc');
 		setWrong('#d6d7dc');

@@ -146,6 +146,7 @@ const ResultsPage = () => {
               fullWidth
               variant="contained"
               className={classes.button}
+              onClick={() => {history.push('/quiz')}}
             >
               Play Again
             </Button>

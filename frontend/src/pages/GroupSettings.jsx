@@ -153,6 +153,7 @@ const GroupSettingsPage = () => {
               fullWidth
               variant="contained"
               className={classes.button}
+              onClick={() => {history.push('/quiz')}}
             >
               Start
             </Button>
