@@ -67,16 +67,16 @@ function Dashboard () {
 		setOpen(false);
 	};
 
-		// Open the 'Create Group' modal
-		const [openCreate, setOpenCreate] = React.useState(false);
+	// Open the 'Create Group' modal
+	const [openCreate, setOpenCreate] = React.useState(false);
 
-		const handleClickOpenCreate = () => {
-			setOpenCreate(true);
-		};
-		const handleCloseCreate = () => {
-			setOpenCreate(false);
-			setOpen(false);
-		};
+	const handleClickOpenCreate = () => {
+		setOpenCreate(true);
+	};
+	const handleCloseCreate = () => {
+		setOpenCreate(false);
+		setOpen(false);
+	};
 	
 
 	return (
