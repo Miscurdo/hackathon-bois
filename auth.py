@@ -1,3 +1,6 @@
+import json
+import hashlib
+
 ###
 # input: JSON {'email': ,'password': ,'phone': ,'name': ,'student': boolean}
 # returns: null
@@ -7,8 +10,10 @@
 # Password is hashed before being saved.
 ###
 def register(JSONInput):
-    pass
-
+    newStudent = json.loads(JSONInput)
+    newStudent['password'] = hashlib.sha256(newStudent['password'].encode()).hexdigest()
+    newStudent['questionList'] = []
+    newStudent['token'] = []
 ###
 # input: {'email':, 'password':}
 # result: {'token':}
