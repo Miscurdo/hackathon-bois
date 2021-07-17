@@ -15,7 +15,7 @@ def chooseQestion(token, course):
         totalWeight += question['weight']
     
     # Handling edge case where student has no courses. idk why just felt like it
-    if totalWeight = 0:
+    if totalWeight == 0:
         return None
 
     choice = randrange(totalWeight)
@@ -48,7 +48,7 @@ def questionCorrect(token, course, qID, answer):
     # This will cause the original question weight to be modified twice.
     # This is not coded against as we want the question increase in weight to be more than that of
     # other questions of the same tag.
-    for question in courseElem['questionList']
+    for question in courseElem['questionList']:
         change = False
         for tag in tags:
             if question['tages'].count(tag) != 0:

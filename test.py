@@ -2,6 +2,7 @@ import data
 import auth
 import Lecturer
 import Student
+import questions
 
 def questionGen():
     questionList = []
@@ -25,14 +26,14 @@ if __name__ == "__main__":
     #print(data.users)
     #print(data.courses)
     #print(auth.authenticate(token))
-    auth.logout(token)
+    #auth.logout(token)
     #print(data.users)
 
     newQuestions = questionGen()
     for question in newQuestions:
-            Lecturer.addQuestion(question, "Hackathon")
+            Lecturer.addQuestion(questions, "Hackathon")
     
     Student.joinCourse("Hackathon", "", token)
-    print(Student.chooseQestion(token, "Hackathon"))
+    print(question.chooseQestion(token, "Hackathon"))
 
     #print(data.courses)
