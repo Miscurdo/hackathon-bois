@@ -9,23 +9,25 @@ def checkToken(token):
     user = data.users[userID]
     return user
 
-# Given a list of questions add all to the current student
-def addQuestions(questions, token):
-    user = checkToken(token)
-
-    for question in questions:
-        user.questionList.add(question)
 
 # Adds a student to course with corresponding courseCode
 # automatically adds all questions associated to that course to student
-# only called by lecturer.py
+# initialising their weights as 1 to start
 def joinCourse(courseCode, password, token):
     user = checkToken(token)
 
     for course in data.courses:
-        if courseCode == course.courseCode and course.password == password:
+        if courseCode == course.courseCode and course['password'] == password:
+            qList = []
+            dict = {"course": courseCode, "questionList": qList}
+
             for question in course.questions:
-                user.questionList.add(question)
+                qList.add({"questionID": question["questionID"], "weight": 1})
+            
+            user['courseList'].add(dict)
+            break
+
+    
 
 # Removes student from course
 # removes all associated questions from that student
