@@ -29,13 +29,14 @@ def addQuestion(Question, courseCode):
         if courseCode == course['courseCode']:
             course['questionList'].append(Question)
 
+    updateStudentsA(courseCode, Question)
 #
 def removeQuestion(Question, courseCode):
     for course in data.courses:
         if courseCode == course['courseCode']:
             course['questionList'].remove(Question)
 
-
+    updateStudentsR(courseCode, Question)
 
 # DOES NOTHING - POTENTIALLY REUSE
 # Adds a student to an available course

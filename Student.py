@@ -20,13 +20,13 @@ def joinCourse(courseCode, password, token):
     for course in data.courses:
         if courseCode == course['courseCode'] and course['coursePin'] == password:
             qList = []
-            newCourse = {"courseCode": courseCode, "questionList": qList}
-
+           
             for question in course['questionList']:
                 #print(question)
                 #print(question['tags'])
                 qList.append({"qID": question['qID'], "weight": 1, "tags": question['tags']})
             
+            newCourse = {"courseCode": courseCode, "questionList": qList}
             user['courseList'].append(newCourse)
             return
 

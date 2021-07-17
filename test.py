@@ -25,7 +25,7 @@ if __name__ == "__main__":
     #print(data.users)
     Lecturer.addCourse("Hackathon", "")
     Lecturer.addQuestion({"qID": 2, "question": "How is it going?", "ansList": ["A","B","C"], "correctAns": "D", "tags": ["Hackathon", "pogging"]}, "Hackathon")
-    
+    Lecturer.addQuestion({"qID": 3, "question": "haha", "ansList": ["teehee"], "correctAns": "reeves", "tags": ["Hackathon", "jokes"]}, "Hackathon")
     #print(data.courses)
     
     #print(data.users)
@@ -44,6 +44,7 @@ if __name__ == "__main__":
     #print(data.courses)
     
     Student.joinCourse("Hackathon", "", token)
+
     #print(data.users)
     #print(questions.chooseQestion(token, "Hackathon"))
 
