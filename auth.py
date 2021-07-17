@@ -35,7 +35,7 @@ def register(email, password, phone, name):
 def login(email, password):
     for elem in data.users:
         if elem['email'] == email and elem['password'] == hashlib.sha256(password.encode()).hexdigest():
-            token = generateToken()
+            token = str(generateToken())
             elem['token'].append(token)
             return token
         elif elem['email'] == email:
