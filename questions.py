@@ -31,8 +31,34 @@ def chooseQestion(token, course):
     return courseElem['questionList'][:-1]
 
 def questionCorrect(token, course, qID, answer):
-    pass
+    if answer == True:
+        modification = -0.1
+    else:
+        modification = 0.1
 
+    # Find Question and change its weight.
+    tags = []
+    courseElem = getCourse(token, course)
+    for question in courseElem['questionList']:
+        if question['qID'] == qID:
+            tags = question['tags']
+            question['weight'] += modification * question['weight']
+    
+    # Next find all questions with at least one tag in common and change their weights.
+    # This will cause the original question weight to be modified twice.
+    # This is not coded against as we want the question increase in weight to be more than that of
+    # other questions of the same tag.
+    for question in courseElem['questionList']
+        change = False
+        for tag in tags:
+            if question['tages'].count(tag) != 0:
+                change = True
+        
+        if change == True:
+            question['weight'] += modification * question['weight']
+
+
+# Helper function to return the course element from a student's course list
 def getCourse(token, course):
     uID = auth.authenticate(token)
     user = data.users[uID]
