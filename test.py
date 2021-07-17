@@ -5,11 +5,14 @@ import Student
 import questions
 
 def questionGen():
-    questionList = []
-    questionList.append({"qID": 3, "question": "Who is on first?", "ansList": ["who?","what?","when"], "correctAns": "who", "tags": ["Hackathon", "monty Python"]})
-    questionList.append({"qID": 4, "question": "Whats the answer to life the universe and everything?", "ansList": ["41","0","idk"], "correctAns": "42", "tags": ["Hitchhiker's Guidew", "Joke"]})
-    questionList.append({"qID": 5, "question": "Airspeed velocity of an unladen sparrow?", "ansList": ["idk","7","what?"], "correctAns": "African or European", "tags": ["Birds", "monty Python"]})
-    return questionList
+    Lecturer.addQuestion({"qID": 3, "question": "Who is on first?", "ansList": ["who?","what?","when"], "correctAns": "who", "tags": ["Hackathon", "monty Python"]}, "Hackathon")
+    Lecturer.addQuestion({"qID": 4, "question": "Whats the answer to life the universe and everything?", "ansList": ["41","0","idk"], "correctAns": "42", "tags": ["Hitchhiker's Guidew", "Joke"]}, "Hackathon")
+
+    #questionList = []
+    #questionList.append()
+    #questionList.append()
+    #questionList.append({"qID": 5, "question": "Airspeed velocity of an unladen sparrow?", "ansList": ["idk","7","what?"], "correctAns": "African or European", "tags": ["Birds", "monty Python"]})
+    #return questionList
 
 if __name__ == "__main__":
     data.init()
@@ -29,11 +32,15 @@ if __name__ == "__main__":
     #auth.logout(token)
     #print(data.users)
 
-    newQuestions = questionGen()
-    for question in newQuestions:
-            Lecturer.addQuestion(questions, "Hackathon")
+    questionGen()
+    #for question in newQuestions:
+        #Lecturer.addQuestion(questions, "Hackathon")
+    #    pass
+    
+    #print(data.courses)
     
     Student.joinCourse("Hackathon", "", token)
-    print(question.chooseQestion(token, "Hackathon"))
+    print(data.users)
+    print(questions.chooseQestion(token, "Hackathon"))
 
     #print(data.courses)
