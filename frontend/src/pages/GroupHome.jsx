@@ -2,8 +2,7 @@ import React from 'react';
 import { useHistory } from 'react-router';
 import { makeStyles } from '@material-ui/core/styles';
 import NavBar from '../components/NavBar';
-import { Button, Paper, Grid, Typography } from '@material-ui/core';
-import { flexbox } from '@material-ui/system';
+import { Button, Paper, Typography } from '@material-ui/core';
 
 const GroupHomePage = () => {
   const useStyles = makeStyles((theme) => ({
@@ -15,20 +14,27 @@ const GroupHomePage = () => {
     },
     title: {
       width: '100%',
-      marginTop: '75px',
+      marginTop: '90px',
       height: '50px',
-      backgroundColor: 'lightgreen'
+      justifyContent: 'center',
+    },
+    courseTitle: {
+      width: '300px',
+      marginLeft: 'auto',
+      marginRight: 'auto',
+      marginTop: '30px',
+      borderBottom: '1px solid grey',
+      paddingBottom: '5px',
     },
     main: {
-      backgroundColor: 'pink',
       display: 'flex',
       width: '100%',
       marginTop: 0,
       height: '85vh',
     },
     button: {
-      width: '300px',
-      height: '90px',
+      width: '200px',
+      height: '60px',
       marginLeft: 'auto',
       marginRight: 'auto',
       color: 'white',
@@ -37,20 +43,20 @@ const GroupHomePage = () => {
         backgroundColor: '#C8B8D8',
         color: 'black',
       },
-      fontSize: '30px',
-      marginTop: '70px',
+      fontSize: '20px',
+      marginTop: '50px',
     },
     quiz: {
-      width: '80%',
-      backgroundColor: 'lightblue',
-
+      width: '85%',
+      marginTop: '20px',
+      marginLeft: '20px',
     },
     statsComponent: {
       display: 'flex',
       flexDirection: 'column',
     },
     statsText: {
-      marginTop: '70px',
+      marginTop: '50px',
       marginLeft: '28%',
       textAlign: 'left',
       display: 'block',
@@ -65,50 +71,63 @@ const GroupHomePage = () => {
     rectangle1: {
       width: '250px',
       height: '30px',
-      backgroundColor: 'lightblue',
+      backgroundColor: '#fbe4e4',
       display: 'inline-block',
       marginLeft: '20px',
       marginRight: '30px',
-      border: '1px solid black',
     },
     rectangle2: {
       width: '150px',
       height: '30px',
-      backgroundColor: 'lightpink',
+      backgroundColor: '#fbf3db',
       display: 'inline-block',
       marginLeft: '20px',
       marginRight: '30px',
-      border: '1px solid black',
     },
     rectangle3: {
       width: '350px',
       height: '30px',
-      backgroundColor: 'lightgreen',
+      backgroundColor: '#ddedea',
       display: 'inline-block',
       marginLeft: '20px',
       marginRight: '30px',
-      border: '1px solid black',
     },
     rectangle4: {
       width: '90px',
       height: '30px',
-      backgroundColor: 'red',
+      backgroundColor: '#ddebf1',
       display: 'inline-block',
       marginLeft: '20px',
       marginRight: '30px',
-      border: '1px solid black',
     },
     sideBar: {
-      backgroundColor: 'cyan',
-      width: '20%',
+      width: '15%',
       display: 'inline-flex',
       flexDirection: 'column',
       textAlign: 'left',
-    }
+      marginLeft: '20px',
+      marginTop: '20px',
+    },
+    userTitle: {
+      fontWeight: 'bold',
+      fontSize: '20px',
+      marginTop: '20px',
+      marginLeft: '20px',
+      marginBottom: 0,
+    },
+    userNames: {
+      marginTop: '10px',
+      marginLeft: '30px',
+      marginBottom: 0,
+    },
   }));
 
   const classes = useStyles();
   const history = useHistory();
+
+  const handleQuizRedirect = () => {
+    history.push(`./group-settings`);
+  };
 
   return (
     <div>
@@ -116,14 +135,13 @@ const GroupHomePage = () => {
         <NavBar/>
       </div>
       <div className={classes.root}>
-        <div className={classes.title}>
-          <Typography component="h4" variant="h4">
-            COMP1511
-          </Typography>
-        </div>
         <div className={classes.main}>
-          <div className={classes.quiz}>
+          <Paper className={classes.quiz} elevation={8}>
+            <Typography component="h4" variant="h4" className={classes.courseTitle}>
+              COMP1511
+            </Typography>
             <Button
+              onClick={handleQuizRedirect}
               type="submit"
               fullWidth
               variant="contained"
@@ -133,7 +151,7 @@ const GroupHomePage = () => {
             </Button>
             <div className={classes.statsComponent}>
               <Typography component="h5" variant="h5" className={classes.statsText}>
-                Overall Statistics
+                Personal Statistics
               </Typography>
               <span className={classes.statsTopic}>
                 Topic 1: <div className={classes.rectangle1}></div>75%
@@ -148,14 +166,17 @@ const GroupHomePage = () => {
                 Topic 4: <div className={classes.rectangle4}></div>34%
               </span>
             </div>
-          </div>
+          </Paper>
           <div className={classes.sideBar}>
             <div className={classes.admin}>
-              <span className={classes.userTitle}>Admin</span>
+              <p className={classes.userTitle}>Admin</p>
+              <p className={classes.userNames}>Annie</p>
             </div>
             <div className={classes.members}>
-              <span className={classes.userTitle}>Members</span>
-
+              <p className={classes.userTitle}>Members</p>
+              <p className={classes.userNames}>Shabrina</p>
+              <p className={classes.userNames}>Jamie</p>
+              <p className={classes.userNames}>Marco</p>
             </div>
           </div>
         </div>
