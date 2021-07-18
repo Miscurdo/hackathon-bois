@@ -99,7 +99,7 @@ function Dashboard () {
 			</div>
 			<main>
 				<div className={classes.heroContent}>
-					<Typography component="h1" variant="h4" color="textPrimary">
+					<Typography component="h1" variant="h4" color="textPrimary" style={{fontFamily: 'Bree Serif'}}>
 						Groups
 					</Typography>
 				</div>

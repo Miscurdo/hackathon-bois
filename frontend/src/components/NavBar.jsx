@@ -6,6 +6,7 @@ import Button from '@material-ui/core/Button';
 import CssBaseline from '@material-ui/core/CssBaseline';
 import { makeStyles } from '@material-ui/core/styles';
 import { useHistory } from 'react-router';
+import logo from '../logo.png';
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -23,7 +24,13 @@ const useStyles = makeStyles((theme) => ({
   },
   button: {
     padding: theme.spacing(0, 3, 0),
-  }
+  },
+  logo: {
+    display: 'block',
+    margin: '5px 10px',
+    height: 'auto',
+    width: '30px',
+  },
 }));
 
 function NavBar () {
@@ -43,16 +50,20 @@ function NavBar () {
   return (
     <div className={classes.root}>
       <CssBaseline />
-      <AppBar className={classes.appBar}>
+      <AppBar className={classes.appBar} style={{ background: '#731dd8' }}>
         <Toolbar>
-          <Typography id="BigBrain" variant="h6" color="inherit" noWrap>
+          <img alt="Requizit Logo" src={logo} className={classes.logo}></img>
+          <Typography id="BigBrain" variant="h6" color="inherit" noWrap style={{
+              fontWeight: 'bold',
+              fontFamily: 'Bree Serif'
+            }}>
             Requizit
           </Typography>
-          <Button id="dashboard" className={classes.button} color='inherit' onClick={handleDashboard}>
+          <Button id="dashboard" className={classes.button} color='inherit' onClick={handleDashboard} style={{fontFamily: 'Bree Serif'}}>
             Dashboard
           </Button>
           {/* <Button id="logout" className={classes.logoutButton} color="inherit" onClick={history.push('/login')}>Logout</Button> */}
-          <Button id="logout" className={classes.logoutButton} color="inherit" onClick={handleLogout}>Logout</Button>
+          <Button id="logout" className={classes.logoutButton} color="inherit" onClick={handleLogout} style={{fontFamily: 'Bree Serif'}}>Logout</Button>
 
         </Toolbar>
       </AppBar>
