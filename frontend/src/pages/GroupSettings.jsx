@@ -2,7 +2,7 @@ import React from 'react';
 import { useHistory } from 'react-router';
 import { makeStyles } from '@material-ui/core/styles';
 import NavBar from '../components/NavBar';
-import { Button, Checkbox, FormControl, FormControlLabel, Paper, Grid, Radio, RadioGroup, Typography } from '@material-ui/core';
+import { Button, Checkbox, FormControl, FormControlLabel, Paper, Grid, Radio, RadioGroup, Typography, Divider } from '@material-ui/core';
 
 const GroupSettingsPage = () => {
   const useStyles = makeStyles((theme) => ({
@@ -11,6 +11,8 @@ const GroupSettingsPage = () => {
       marginTop: '55px',
       display: 'block',
       width: '100%',
+      background: '#f2e7fe',
+      fontFamily: 'Bree Serif'
     },
     main: {
       marginTop: '90px',
@@ -24,20 +26,22 @@ const GroupSettingsPage = () => {
       marginLeft: 'auto',
       marginRight: 'auto',
       paddingTop: '20px',
-      borderBottom: '1px solid grey',
       paddingBottom: '5px',
+      fontFamily: 'Bree Serif'
     },
     text: {
-      fontSize: '24px',
+      fontSize: '24px'
     },
     topicsText: {
+      fontFamily: 'Verdana',
       display: 'inline-flex',
       alignItems: 'center',
       width: '300px',
       height: '50px',
       paddingLeft: '20px',
       fontSize: '18px',
-      border: '1px solid grey',
+      // border: '1px solid grey',
+      background: '#f5f5f5'
     },
     topicsSpan: {
       marginLeft: '40px',
@@ -50,7 +54,8 @@ const GroupSettingsPage = () => {
       margin: '35px auto 0 auto',
       width: '150px',
       paddingBottom: '5px',
-      borderBottom: '1px solid grey',
+      paddingTop: '10px',
+      fontFamily: 'Bree Serif'
     },
     button: {
       width: '300px',
@@ -87,6 +92,7 @@ const GroupSettingsPage = () => {
           <Typography component="h4" variant="h4" className={classes.title}>
             Settings
           </Typography>
+          <Divider/>
           <p className={classes.text}>What would you like to be quizzed on?</p>
           <Grid container spacing={3} className={classes.topicsGrid}>
             <Grid item xs={6}>
@@ -94,7 +100,7 @@ const GroupSettingsPage = () => {
                 <Checkbox
                   color="primary"
                 />
-                <div className={classes.topicsText}>Topic 1</div>  
+                <div className={classes.topicsText}>General</div>  
               </span>
             </Grid>
             <Grid item xs={6}>
@@ -102,7 +108,7 @@ const GroupSettingsPage = () => {
                 <Checkbox
                   color="primary"
                 />
-                <div className={classes.topicsText}>Topic 2</div>  
+                <div className={classes.topicsText}>Planets</div>  
               </span>
             </Grid>
             <Grid item xs={6}>
@@ -110,7 +116,7 @@ const GroupSettingsPage = () => {
                 <Checkbox
                   color="primary"
                 />
-                <div className={classes.topicsText}>Topic 3</div>  
+                <div className={classes.topicsText}>Animals</div>  
               </span>
             </Grid>
             <Grid item xs={6}>
@@ -118,7 +124,7 @@ const GroupSettingsPage = () => {
                 <Checkbox
                   color="primary"
                 />
-                <div className={classes.topicsText}>Topic 4</div>  
+                <div className={classes.topicsText}>Plants</div>  
               </span>
             </Grid>
             <Grid item xs={6}>
@@ -126,7 +132,7 @@ const GroupSettingsPage = () => {
                 <Checkbox
                   color="primary"
                 />
-                <div className={classes.topicsText}>Topic 5</div>  
+                <div className={classes.topicsText}>Humans</div>  
               </span>
             </Grid>
             <Grid item xs={6}>
@@ -134,7 +140,7 @@ const GroupSettingsPage = () => {
                 <Checkbox
                   color="primary"
                 />
-                <div className={classes.topicsText}>Topic 6</div>  
+                <div className={classes.topicsText}>Clouds</div>  
               </span>
             </Grid>
           </Grid>
@@ -143,10 +149,10 @@ const GroupSettingsPage = () => {
             </Typography>
             <FormControl component="fieldset">
               <RadioGroup value={radioValue} onChange={handleRadioChange}>
-                <FormControlLabel value="10" control={<Radio color="primary"/>} label="10 questions"/>
-                <FormControlLabel value="20" control={<Radio color="primary"/>} label="20 questions"/>
-                <FormControlLabel value="30" control={<Radio color="primary"/>} label="30 questions"/>
-                <FormControlLabel value="40" control={<Radio color="primary"/>} label="40 questions"/>
+                <FormControlLabel value="4" control={<Radio color="primary"/>} label="4 questions"/>
+                <FormControlLabel value="8" control={<Radio color="primary"/>} label="8 questions"/>
+                <FormControlLabel value="12" control={<Radio color="primary"/>} label="12 questions"/>
+                <FormControlLabel value="16" control={<Radio color="primary"/>} label="16 questions"/>
               </RadioGroup>
             </FormControl>
             <Button

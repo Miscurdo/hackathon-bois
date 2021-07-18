@@ -2,7 +2,7 @@ import React from 'react';
 import { useHistory } from 'react-router';
 import { makeStyles } from '@material-ui/core/styles';
 import NavBar from '../components/NavBar';
-import { Button, Paper, Typography } from '@material-ui/core';
+import { Button, Divider, Paper, Typography } from '@material-ui/core';
 
 const GroupHomePage = () => {
   const useStyles = makeStyles((theme) => ({
@@ -10,7 +10,8 @@ const GroupHomePage = () => {
       height: '90vh',
       marginTop: '55px',
       display: 'block',
-      width: '100%'
+      width: '100%',
+      background: '#f2e7fe'
     },
     title: {
       width: '100%',
@@ -23,8 +24,9 @@ const GroupHomePage = () => {
       marginLeft: 'auto',
       marginRight: 'auto',
       marginTop: '30px',
-      borderBottom: '1px solid grey',
+      // borderBottom: '1px solid grey',
       paddingBottom: '5px',
+      fontFamily: 'Bree Serif'
     },
     main: {
       display: 'flex',
@@ -45,21 +47,24 @@ const GroupHomePage = () => {
       },
       fontSize: '20px',
       marginTop: '50px',
+      fontFamily: 'Bree Serif'
     },
     quiz: {
-      width: '85%',
+      width: '75%',
       marginTop: '20px',
       marginLeft: '20px',
     },
     statsComponent: {
       display: 'flex',
       flexDirection: 'column',
+      marginTop: 40
     },
     statsText: {
       marginTop: '50px',
       marginLeft: '28%',
       textAlign: 'left',
       display: 'block',
+      fontFamily: 'Bree Serif'
     },
     statsTopic: {
       display: 'inline-flex',
@@ -67,6 +72,7 @@ const GroupHomePage = () => {
       fontSize: '20px',
       marginLeft: '30%',
       marginTop: '25px',
+      fontFamily: 'Verdana'
     },
     rectangle1: {
       width: '250px',
@@ -114,11 +120,13 @@ const GroupHomePage = () => {
       marginTop: '20px',
       marginLeft: '20px',
       marginBottom: 0,
+      fontFamily: 'Bree Serif'
     },
     userNames: {
       marginTop: '10px',
       marginLeft: '30px',
       marginBottom: 0,
+      fontFamily: 'Verdana'
     },
   }));
 
@@ -137,9 +145,10 @@ const GroupHomePage = () => {
       <div className={classes.root}>
         <div className={classes.main}>
           <Paper className={classes.quiz} elevation={8}>
-            <Typography component="h4" variant="h4" className={classes.courseTitle}>
+            <Typography component="h4" variant="h4" className={classes.courseTitle} >
               COMP123
             </Typography>
+            <Divider style={{marginTop: 20}}/>
             <Button
               onClick={handleQuizRedirect}
               type="submit"
@@ -172,6 +181,7 @@ const GroupHomePage = () => {
               <p className={classes.userTitle}>Admin</p>
               <p className={classes.userNames}>Annie</p>
             </div>
+            <Divider style={{marginTop: 20}}/>
             <div className={classes.members}>
               <p className={classes.userTitle}>Members</p>
               <p className={classes.userNames}>Shabrina</p>

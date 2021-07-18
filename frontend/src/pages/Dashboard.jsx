@@ -89,7 +89,7 @@ function Dashboard () {
 			</div>
 			<main>
 				<div className={classes.heroContent}>
-					<Typography component="h1" variant="h4" color="textPrimary">
+					<Typography component="h1" variant="h4" color="textPrimary" style={{fontFamily: 'Bree Serif'}}>
 						Groups
 					</Typography>
 				</div>
@@ -98,22 +98,22 @@ function Dashboard () {
 					<Grid item xs={12}></Grid>
 					<Grid item xs={12}>
 						<Paper className={classes.paper} onClick={handleMoveToGroupHome}>
-							<Typography>COMP123</Typography>
+							<Typography style={{fontFamily: 'Verdana'}}>COMP123</Typography>
 						</Paper>
 					</Grid>
 					<Grid item xs={12}>
 						<Paper className={classes.paper}>
-							<Typography>COMP123 Study Group</Typography>
+							<Typography style={{fontFamily: 'Verdana'}}>COMP123 Study Group</Typography>
 						</Paper>
 					</Grid>
 					<Grid item xs={12}>
 						<Paper className={classes.paper}>
-							<Typography>My Other Study Group</Typography>
+							<Typography style={{fontFamily: 'Verdana'}}>My Other Study Group</Typography>
 						</Paper>
 					</Grid>
 					<Grid item xs={12}>
 						<Paper className={classes.paper}>
-							<Typography>COMP456</Typography>
+							<Typography style={{fontFamily: 'Verdana'}}>COMP456</Typography>
 						</Paper>
 					</Grid>
 				</Grid>
