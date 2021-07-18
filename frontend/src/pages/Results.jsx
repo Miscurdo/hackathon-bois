@@ -6,7 +6,7 @@ import NavBar from '../components/NavBar';
 
 import '../App.css';
 
-const backend = `http://localhost:4000`;
+// const backend = `http://localhost:4000`;
 
 const useStyles = makeStyles({
   root: {

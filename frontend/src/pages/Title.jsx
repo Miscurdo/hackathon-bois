@@ -6,8 +6,6 @@ import logo from '../logo.png';
 
 import '../App.css';
 
-const backend = `http://localhost:4000`;
-
 const useStyles = makeStyles({
   form: {
     padding: '20px',
@@ -49,7 +47,7 @@ const TitlePage = () => {
   };
 
   return (
-    <div className="login-register-paper">
+    <div>
       <Grid>
         <Paper elevation={10} className={classes.form}>
           <img alt="Requizit Logo" src={logo} className={classes.logo}></img>

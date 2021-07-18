@@ -98,7 +98,7 @@ const GroupSettingsPage = () => {
               </span>
             </Grid>
             <Grid item xs={6}>
-              <span className={classes.topicsSpan, classes.topicsEven}>
+              <span className={classes.topicsSpan}>
                 <Checkbox
                   color="primary"
                 />
@@ -114,7 +114,7 @@ const GroupSettingsPage = () => {
               </span>
             </Grid>
             <Grid item xs={6}>
-              <span className={classes.topicsSpan, classes.topicsEven}>
+              <span className={classes.topicsSpan} >
                 <Checkbox
                   color="primary"
                 />
@@ -130,7 +130,7 @@ const GroupSettingsPage = () => {
               </span>
             </Grid>
             <Grid item xs={6}>
-              <span className={classes.topicsSpan, classes.topicsEven}>
+              <span className={classes.topicsSpan}>
                 <Checkbox
                   color="primary"
                 />

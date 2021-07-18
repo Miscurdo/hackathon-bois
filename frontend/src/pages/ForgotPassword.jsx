@@ -1,11 +1,12 @@
 import React from 'react';
 import { useHistory } from 'react-router-dom';
-import { Avatar, Button, CssBaseline, TextField, FormControlLabel, Checkbox } from '@material-ui/core';
+import { Avatar, Button, CssBaseline, TextField } from '@material-ui/core';
 import { Paper, Grid, Typography } from '@material-ui/core';
 import LockOutlinedIcon from '@material-ui/icons/LockOutlined';
 import { makeStyles } from '@material-ui/core/styles';
 
 import stockPhoto from '../studyingPhoto.jpg';
+import logo from '../logo.png';
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -21,6 +22,10 @@ const useStyles = makeStyles((theme) => ({
   },
   paper: {
     marginTop: '20%',
+    width: '70%',
+    marginLeft: 'auto',
+    marginRight: 'auto',
+    height: '70%',
     display: 'flex',
     flexDirection: 'column',
     alignItems: 'center',
@@ -36,7 +41,7 @@ const useStyles = makeStyles((theme) => ({
   submit: {
     width: '30%',
     display: 'block',
-    margin: '10px auto',
+    margin: '15px auto 0 auto',
     color: 'white',
     backgroundColor: "#731DD8",
     '&:hover': {
@@ -46,6 +51,18 @@ const useStyles = makeStyles((theme) => ({
   },
   secondaryDiv: {
     marginTop: '30px'
+  },
+  logo: {
+    marginTop: '70px',
+    marginBottom: '20px',
+    width: '50px',
+    height: 'auto',
+  },
+  buttonsDiv: {
+    marginTop: '30px',
+  },
+  text: {
+    marginTop: '10px',
   }
 }));
 
@@ -61,12 +78,13 @@ const ForgotPasswordPage = () => {
       <CssBaseline />
       <Grid item xs={false} sm={4} md={7} className={classes.image} />
       <Grid item xs={12} sm={8} md={5} component={Paper} elevation={6} square>
-        <div className={classes.paper}>
-          <Avatar className={classes.avatar}>
-            <LockOutlinedIcon />
-          </Avatar>
+        <Paper elevation={10} className={classes.paper}>
+          <img src={logo} alt="requizitlogo" className={classes.logo}></img>
           <Typography component="h1" variant="h5">
             Forgot Password
+          </Typography>
+          <Typography component="body" variant="body" className={classes.text}>
+            Enter your email to reset your password.
           </Typography>
           <form className={classes.form} noValidate>
             <TextField
@@ -80,26 +98,28 @@ const ForgotPasswordPage = () => {
               autoComplete="email"
               autoFocus
             />
-            <Button
-              type="submit"
-              fullWidth
-              variant="contained"
-              className={classes.submit}
-            >
-              Reset
-            </Button>
-            <Button
-              type="submit"
-              fullWidth
-              variant="contained"
-              color="primary"
-              className={classes.submit}
-              onClick={handleLoginRedirect}
-            >
-              Sign In
-            </Button>
+            <div className={classes.buttonsDiv}>
+              <Button
+                type="submit"
+                fullWidth
+                variant="contained"
+                className={classes.submit}
+              >
+                Reset
+              </Button>
+              <Button
+                type="submit"
+                fullWidth
+                variant="contained"
+                color="primary"
+                className={classes.submit}
+                onClick={handleLoginRedirect}
+              >
+                Sign In
+              </Button>
+            </div>
           </form>
-        </div>
+        </Paper>
       </Grid>
     </Grid>
   );

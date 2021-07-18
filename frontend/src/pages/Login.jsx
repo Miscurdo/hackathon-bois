@@ -1,12 +1,13 @@
 import React from 'react';
 import { useHistory } from 'react-router-dom';
-import { Avatar, Button, CssBaseline, TextField, FormControlLabel, Checkbox } from '@material-ui/core';
+import { Button, CssBaseline, TextField, FormControlLabel, Checkbox } from '@material-ui/core';
 import { Link, Paper, Grid, Typography } from '@material-ui/core';
 import LockOutlinedIcon from '@material-ui/icons/LockOutlined';
 import { makeStyles } from '@material-ui/core/styles';
 
 import stockPhoto from '../studyingPhoto.jpg';
-const BASEURL = 'http://localhost:8080';
+import logo from '../logo.png';
+// const BASEURL = 'http://localhost:8080';
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -22,16 +23,17 @@ const useStyles = makeStyles((theme) => ({
   },
   paper: {
     marginTop: '20%',
+    width: '70%',
+    marginLeft: 'auto',
+    marginRight: 'auto',
+    height: '70%',
     display: 'flex',
     flexDirection: 'column',
     alignItems: 'center',
   },
-  avatar: {
-    margin: theme.spacing(1),
-    backgroundColor: theme.palette.secondary.main,
-  },
+
   form: {
-    width: '60%',
+    width: '70%',
     marginTop: theme.spacing(1),
   },
   submit: {
@@ -45,6 +47,12 @@ const useStyles = makeStyles((theme) => ({
   },
   secondaryDiv: {
     marginTop: '30px'
+  },
+  logo: {
+    marginTop: '70px',
+    marginBottom: '20px',
+    width: '50px',
+    height: 'auto',
   }
 }));
 
@@ -52,8 +60,8 @@ const useStyles = makeStyles((theme) => ({
 const LoginPage = () => {
   const classes = useStyles();
   const history = useHistory();
-  const [email, setEmail] = React.useState('');
-  const [password, setPassword] = React.useState('');
+  // const [email, setEmail] = React.useState('');
+  // const [password, setPassword] = React.useState('');
 
   const handleRegisterRedirect = (e) => {
     history.push(`./register`);
@@ -93,10 +101,8 @@ const LoginPage = () => {
       <CssBaseline />
       <Grid item xs={false} sm={4} md={7} className={classes.image} />
       <Grid item xs={12} sm={8} md={5} component={Paper} elevation={6} square>
-        <div className={classes.paper}>
-          <Avatar className={classes.avatar}>
-            <LockOutlinedIcon />
-          </Avatar>
+        <Paper className={classes.paper} elevation={10}>
+          <img src={logo} alt="requizitlogo" className={classes.logo}></img>
           <Typography component="h1" variant="h5">
             Sign in
           </Typography>
@@ -150,7 +156,7 @@ const LoginPage = () => {
               </Grid>
             </Grid>
           </form>
-        </div>
+        </Paper>
       </Grid>
     </Grid>
   );

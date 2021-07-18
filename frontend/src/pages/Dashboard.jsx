@@ -14,10 +14,13 @@ import Dialog from "@material-ui/core/Dialog";
 import MuiDialogContent from "@material-ui/core/DialogContent";
 import DialogTitle from '@material-ui/core/DialogTitle';
 import DialogActions from '@material-ui/core/DialogActions';
+import CourseCard from '../components/CourseCard';
 
 function Dashboard () {
+	const [courseNames, setCourseNames] = React.useState(['COMP123', 'COMP123 Study Group', 'Other Study Group']);
+	const [newCourseName, setNewCourseName] = React.useState('');
 
-	const useStyles = makeStyles((theme) => ({
+    const useStyles = makeStyles((theme) => ({
 		heroContent: {
 			backgroundColor: theme.palette.background.paper,
 			padding: theme.spacing(10, 0, 2),
@@ -29,6 +32,9 @@ function Dashboard () {
 		},
 		modalPaper: {
 			padding: theme.spacing(2),
+            '&:hover': {
+                cursor: 'pointer',
+              }
 		},
 		fab: {
 			position: 'absolute',
@@ -36,7 +42,6 @@ function Dashboard () {
 			right: theme.spacing(5),
 		},
 	}));
-
 	const DialogContent = withStyles((theme) => ({
 		root: {
 			padding: theme.spacing(2)
@@ -82,6 +87,11 @@ function Dashboard () {
 		e.preventDefault();
 		history.push('/group-home');
 	}
+    const handleNewCourse = () => {
+        setCourseNames(courseNames => [...courseNames, newCourseName]);
+        console.log(courseNames);
+    };
+
 	return (
 		<div>
 			<div>
@@ -95,27 +105,11 @@ function Dashboard () {
 				</div>
 				<Container>
 				<Grid container spacing={3}>
-					<Grid item xs={12}></Grid>
-					<Grid item xs={12}>
-						<Paper className={classes.paper} onClick={handleMoveToGroupHome}>
-							<Typography>COMP123</Typography>
-						</Paper>
-					</Grid>
-					<Grid item xs={12}>
-						<Paper className={classes.paper}>
-							<Typography>COMP123 Study Group</Typography>
-						</Paper>
-					</Grid>
-					<Grid item xs={12}>
-						<Paper className={classes.paper}>
-							<Typography>My Other Study Group</Typography>
-						</Paper>
-					</Grid>
-					<Grid item xs={12}>
-						<Paper className={classes.paper}>
-							<Typography>COMP456</Typography>
-						</Paper>
-					</Grid>
+					{courseNames.map(name => (
+                        <Grid item xs={12}>
+                            <CourseCard courseName={name}></CourseCard>
+                        </Grid>
+					))}
 				</Grid>
 				<Fab color="primary" aria-label="add" className={classes.fab} onClick={handleClickOpen}>
 					<AddIcon />
@@ -139,36 +133,35 @@ function Dashboard () {
 				</Grid>
 				</DialogContent>
 			</Dialog>
-
-			<Dialog open={openJoin} onClose={handleCloseJoin}>
-				<DialogTitle id="form-dialog-title">Join Group</DialogTitle>
-				<DialogContent>
-				<TextField
-					autoFocus
-					margin="dense"
-					id="name"
-					label="Group Name"
-					type="email"
-					fullWidth
-        />
-				<TextField
-					autoFocus
-					margin="dense"
-					id="name"
-					label="Pin"
-					type="email"
-					fullWidth
-        />
-				</DialogContent>
-				<DialogActions>
-          <Button onClick={handleCloseJoin} color="primary">
-            Back
-          </Button>
-          <Button onClick={handleCloseJoin} color="primary">
-            Join
-          </Button>
-        </DialogActions>
-			</Dialog>
+            <Dialog open={openJoin} onClose={handleCloseJoin}>
+                <DialogTitle id="form-dialog-title">Join Group</DialogTitle>
+                    <DialogContent>
+                    <TextField
+                        autoFocus
+                        margin="dense"
+                        id="name"
+                        label="Group Name"
+                        type="text"
+                        fullWidth
+                    />
+                    <TextField
+                        autoFocus
+                        margin="dense"
+                        id="name"
+                        label="Pin"
+                        type="text"
+                        fullWidth
+                    />
+                    </DialogContent>
+                    <DialogActions>
+                        <Button onClick={handleCloseJoin} color="primary">
+                            Back
+                        </Button>
+                        <Button type="submit" onClick={handleNewCourse} color="primary">
+                            Join
+                        </Button>
+                    </DialogActions>
+            </Dialog>
 
 			<Dialog open={openCreate} onClose={handleCloseCreate}>
 				<DialogTitle id="form-dialog-title">Create Group</DialogTitle>
