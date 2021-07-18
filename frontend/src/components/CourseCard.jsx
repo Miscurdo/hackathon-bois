@@ -26,7 +26,7 @@ const CourseCard = ({ courseName }) => {
   const classes = useStyles();
 
   const handleQuizRedirect = () => {
-    history.push(`./quiz`)
+    history.push(`./group-home`)
   }
   return (
     <div>
